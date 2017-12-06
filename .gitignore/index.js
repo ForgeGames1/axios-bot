@@ -29,7 +29,7 @@ bot.on("ready", function () {
 });
 
 bot.on("guildMemberAdd", function(member) {
-    member.guild.channels.find("name", "principal").sendMessage(member.toString() + " Bienvenue sur le discord ! ! :white_check_mark:");
+    member.guild.channels.find("name", "nouveaux").sendMessage(member.toString() + " Bienvenue sur le discord ! ! :white_check_mark:");
     member.addRole(member.guild.roles.find("name", "🎮 Joueur"));
   bot.user.setGame("AxiosBot | " + bot.users.size + " Membres !", "https://www.twitch.tv/axiosbot")
 });
