@@ -28,4 +28,14 @@ bot.on("ready", function () {
         console.log("*``*___*``*");
 });
 
+bot.on("guildMemberAdd", function(member) {
+    member.guild.channels.find("name", "principal").sendMessage(member.toString() + " Bienvenue sur le discord ! ! :white_check_mark:");
+    member.addRole(member.guild.roles.find("name", "🎮 Joueur"));
+  bot.user.setGame("AxiosBot | " + bot.users.size + " Membres !", "https://www.twitch.tv/axiosbot")
+});
+
+bot.on("guildMemberRemove", function(member) {
+  bot.user.setGame("AxiosBot | " + bot.users.size + " Membres !", "https://www.twitch.tv/axiosbot")
+});
+
 bot.login(process.env.TOKEN);
